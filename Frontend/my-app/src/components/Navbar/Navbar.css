@@ -16,8 +16,8 @@
     font-weight: 600;
 }
 .nav-logo img{
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 200px;
     border-radius: 50%;
 }
 .nav-menu{
@@ -66,11 +66,6 @@ nav-menu li{
     /* background: white; */
     cursor: pointer;
 }
-.sign-up{
-    background-color: black;
-    color: #f3f3f3;
-}   
-
 .nav-login-cart button:active {
 
     background: #e4dcdc;
@@ -87,7 +82,8 @@ nav-menu li{
     justify-content: center;
     align-items: center;
     margin-top: -35px;
-    margin-right: 10px;
+    margin-left: -35px;
+    margin-right: 0px;
     border-radius: 11px;
     font-size: 14px;
     background: red;
