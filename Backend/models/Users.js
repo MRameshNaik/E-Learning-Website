@@ -1,6 +1,5 @@
 const { connectToDatabase } = require('../db');
 
-
 async function createUser(username, email, password) {
 
     const client = await connectToDatabase();
