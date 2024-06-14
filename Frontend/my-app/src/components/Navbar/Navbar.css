@@ -1,7 +1,7 @@
 .navbar{
     display: flex;
     justify-content: space-around;
-    padding:16px ;
+    padding:5px;
     box-shadow: 0 1px 3px -2px black;
 }
 .nav-logo{
@@ -16,8 +16,8 @@
     font-weight: 600;
 }
 .nav-logo img{
-    height: 100px;
-    width: 200px;
+    height: 80px;
+    width: 140px;
     border-radius: 50%;
 }
 .nav-menu{
