@@ -2,6 +2,8 @@ import React from "react";
 import './Popular.css'
 import Item from "../Item/Item";
 // we will import data from api calls
+const data_product=[];
+
 const Popular=()=>{
     return (
         <div className="popular">
