@@ -12,7 +12,6 @@ const Navbar = () => {
         <div className="navbar">
             <div className="nav-logo">
                 <img src={logo} alt="Logo" />
-                {/* <p>ELearning</p> */}
             </div>
             <ul className="nav-menu">
                 <li onClick={() => setMenu("home")}>

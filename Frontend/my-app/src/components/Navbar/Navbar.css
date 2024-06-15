@@ -16,11 +16,7 @@
     font-weight: 600;
 }
 .nav-logo img{
-<<<<<<< HEAD
     height: 80px;
-=======
-    height: 70px;
->>>>>>> remotes/origin/master
     width: 140px;
     border-radius: 50%;
 }
@@ -67,10 +63,8 @@ nav-menu li{
     border: none;
     outline: none;
     border-radius: 5%;
-    /* color: #515151; */
     font-size: 20px;
     font-weight: 500;
-    /* background: white; */
     cursor: pointer;
 }
 .nav-login-cart button:active {

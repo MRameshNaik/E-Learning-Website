@@ -1,35 +1,43 @@
-import React from "react";
-import './Item.css'
-import star from '../Asserts/star-regular.svg';
-import views from '../Asserts/eye-regular.svg';
-import time from '../Asserts/clock-regular.svg';
+import React, { useState, useEffect } from "react";
+import './Item.css';
+import Card from "./Card";
 
-const Item=(props)=>{
-    return(
-        <div className="item">
-            <img src={props.image} alt=""></img>
-            {/* course Name */}
-            <p>{props.name}</p>
-            <p>{props.instructor}</p>
-            <div className="item-prices">
-                <div className="item-price-new">
-                    ${props.new_price}
-                </div>
-                <div className="item-price-new">
-                    ${props.old_price}
-                </div>
-            </div>
-            <div className="course_review">
-                <img src={star} alt="" className="" />
-                <p>{props.rating}</p>
-                <img src={views} alt="" className="" />
-                <p>{props.views}</p>
-                <img src={time} alt="" className="" />
-                <p>{props.duration}</p>
-            </div>
-            
+const Item = () => {
+    const [courses, setCourses] = useState([]);
+
+    useEffect(() => {
+        const loadCourses = async () => {
+            try {
+
+                const response = await fetch("http://localhost:5000/courses", {
+                    method: "GET",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error(response.statusText);
+                }
+
+                const result = await response.json();
+                setCourses(result);
+
+            } catch (error) {
+                console.log("Error Fetching Data in frontend", error);
+            }
+        }
+
+        loadCourses();
+    }, []);
+
+    return (
+        <div className="courses"> 
+            {courses.map((course) => (
+                <Card key={course.id} course={course}/>
+            ))}
         </div>
-    )
+    );
 }
 
-export default Item
+export default Item;
