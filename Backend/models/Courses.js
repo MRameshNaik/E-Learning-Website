@@ -9,7 +9,6 @@ async function createCourses(course) {
 
     const client = await pool.connect();
     try {
-        console.log('Executing SQL queryfadf:');
 
         const query = `
             INSERT INTO "E-learning-Website".courses 
@@ -18,17 +17,13 @@ async function createCourses(course) {
             RETURNING id
         `;
 
-        console.log('Executing SQL query12354:');
-
-
         const values = [name, image, new_price, old_price, rating, views, duration];
         const result = await client.query(query, values);
-
-        console.log('Executing SQL query:', query);
 
         return result.rows[0].id;
     } 
     catch (error) {
+        console.log("CAme here console model");
         console.error('Error creating course:', error);
         throw error;
     } 
