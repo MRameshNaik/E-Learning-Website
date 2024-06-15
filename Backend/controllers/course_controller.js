@@ -2,12 +2,14 @@ const { createCourses, getCourses } = require('../models/Courses');
 
 async function createCourse(req,res) {
 
-    //console.log(req.body);
+    console.log(req.body);
     try {
         const id = await createCourses(req.body);
+        console.log("came here controller 1");
         res.status(201).send({ id });
     } 
     catch (error) {
+        console.log("came here controller");
         res.status(500).send({ error: 'Error creating course', error });
     }
 }
@@ -18,7 +20,7 @@ async function getAllCourses(req, res) {
         res.send(courses);
     } 
     catch (error) {
-        res.status(500).send({ error: 'Error retrieving courses' });
+        res.status(500).send({ messages: 'Error retrieving courses' });
     }
 }
 

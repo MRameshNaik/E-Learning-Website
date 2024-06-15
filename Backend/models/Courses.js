@@ -23,6 +23,7 @@ async function createCourses(course) {
         return result.rows[0].id;
     } 
     catch (error) {
+        console.log("CAme here console model");
         console.error('Error creating course:', error);
         throw error;
     } 
